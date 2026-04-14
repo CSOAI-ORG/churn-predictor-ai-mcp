@@ -10,6 +10,11 @@ import sys, os
 
 sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
+from mcp.server.models import InitializationOptions
+from mcp.server import NotificationOptions, Server
+from mcp.server.stdio import stdio_server
+from mcp.types import Resource, Tool, TextContent
+import mcp.types as types
 
 _store = {"customers": {}, "predictions": [], "retention_actions": [], "cohorts": {}}
 
