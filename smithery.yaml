@@ -1,10 +1,5 @@
 name: churn-predictor-ai-mcp
-description: "MEOK AI Labs — Churn Predictor tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/churn-predictor-ai-mcp
-license: MIT
-categories: [Analytics, Machine Learning]
-tags: [churn-prediction, customer-retention, ml-prediction, analytics]
-runtime: python
-entrypoint: server.py
+description: "Churn Predictor Ai Mcp \u2014 Predict customer churn risk from behavioral\
+  \ signals."
+version: 1.0.0
+tools: []
