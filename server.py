@@ -3,13 +3,23 @@
 
 import asyncio
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Any
 import uuid
+from collections import defaultdict
 import sys, os
 
 sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
+
+FREE_DAILY_LIMIT = 15
+_usage = defaultdict(list)
+def _rl(c="anon"):
+    now = datetime.now(timezone.utc)
+    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
+    if len(_usage[c]) >= FREE_DAILY_LIMIT: return json.dumps({"error": f"Limit {FREE_DAILY_LIMIT}/day"})
+    _usage[c].append(now); return None
+
 from mcp.server.models import InitializationOptions
 from mcp.server import NotificationOptions, Server
 from mcp.server.stdio import stdio_server
@@ -18,7 +28,7 @@ import mcp.types as types
 
 _store = {"customers": {}, "predictions": [], "retention_actions": [], "cohorts": {}}
 
-server = Server("churn-predictor-ai-mcp")
+server = Server("churn-predictor-ai")
 
 
 def create_id():
@@ -295,6 +305,7 @@ async def handle_call_tool(name: str, arguments: Any | None) -> list[types.TextC
                 ),
             )
         ]
+    if err := _rl(): return [TextContent(type="text", text=err)]
 
     if name == "predict_churn":
         customer_data = {
@@ -633,7 +644,7 @@ async def main():
             read_stream,
             write_stream,
             InitializationOptions(
-                server_name="churn-predictor-ai-mcp",
+                server_name="churn-predictor-ai",
                 server_version="0.1.0",
                 capabilities=server.get_capabilities(
                     notification_options=NotificationOptions(),
