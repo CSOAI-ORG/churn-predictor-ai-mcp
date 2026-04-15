@@ -1,43 +1,127 @@
 name: churn-predictor-ai-mcp
-description: MEOK AI Labs MCP Server
+description: Comprehensive customer churn prediction and retention analytics.
 version: 1.0.0
 tools:
 - name: predict_churn
   description: Predict churn risk for a customer
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: false
+  - name: last_login_days
+    type: integer
+    required: false
+  - name: support_tickets_last_30d
+    type: integer
+    required: false
+  - name: nps_score
+    type: integer
+    required: false
+  - name: usage_decline_percent
+    type: integer
+    required: false
+  - name: payment_failures
+    type: integer
+    required: false
+  - name: tenure_months
+    type: integer
+    required: false
 - name: batch_predict_churn
   description: Predict churn for multiple customers
-  parameters: []
+  parameters:
+  - name: customers
+    type: array
+    required: false
 - name: get_customer_risk
   description: Get current risk score for a customer
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: true
 - name: track_customer
   description: Add customer to churn tracking
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: true
+  - name: initial_data
+    type: object
+    required: false
 - name: update_customer_signals
   description: Update customer behavioral signals
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: true
+  - name: signals
+    type: object
+    required: false
 - name: get_at_risk_customers
   description: Get all customers above risk threshold
-  parameters: []
+  parameters:
+  - name: threshold
+    type: integer
+    required: false
+  - name: limit
+    type: integer
+    required: false
 - name: create_retention_action
   description: Create a retention action for at-risk customer
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: true
+  - name: action_type
+    type: string
+    required: true
+  - name: description
+    type: string
+    required: false
 - name: get_retention_actions
   description: Get retention actions for a customer
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: false
+  - name: status
+    type: string
+    required: false
 - name: update_retention_action
   description: Update status of retention action
-  parameters: []
+  parameters:
+  - name: action_id
+    type: string
+    required: true
+  - name: status
+    type: string
+    required: true
 - name: get_churn_analytics
   description: Get overall churn analytics
-  parameters: []
+  parameters:
+  - name: period
+    type: string
+    required: false
 - name: get_cohort_retention
   description: Get cohort retention analysis
-  parameters: []
+  parameters:
+  - name: cohort_month
+    type: string
+    required: false
 - name: simulate_intervention
   description: Simulate impact of retention action
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: true
+  - name: action_type
+    type: string
+    required: false
 - name: get_risk_trends
   description: Get risk score trends over time
-  parameters: []
+  parameters:
+  - name: customer_id
+    type: string
+    required: true
+  - name: days
+    type: integer
+    required: false

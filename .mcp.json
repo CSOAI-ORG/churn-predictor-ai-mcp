@@ -1,6 +1,6 @@
 {
   "name": "churn-predictor-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Comprehensive customer churn prediction and retention analytics.",
   "version": "1.0.0",
   "tools": [
     {
@@ -8,7 +8,29 @@
       "description": "Predict churn risk for a customer",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "last_login_days": {
+            "type": "integer"
+          },
+          "support_tickets_last_30d": {
+            "type": "integer"
+          },
+          "nps_score": {
+            "type": "integer"
+          },
+          "usage_decline_percent": {
+            "type": "integer"
+          },
+          "payment_failures": {
+            "type": "integer"
+          },
+          "tenure_months": {
+            "type": "integer"
+          }
+        },
         "required": []
       }
     },
@@ -17,7 +39,11 @@
       "description": "Predict churn for multiple customers",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "customers": {
+            "type": "array"
+          }
+        },
         "required": []
       }
     },
@@ -26,8 +52,14 @@
       "description": "Get current risk score for a customer",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
       }
     },
     {
@@ -35,8 +67,17 @@
       "description": "Add customer to churn tracking",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "initial_data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
       }
     },
     {
@@ -44,8 +85,17 @@
       "description": "Update customer behavioral signals",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "signals": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
       }
     },
     {
@@ -53,7 +103,14 @@
       "description": "Get all customers above risk threshold",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "threshold": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
         "required": []
       }
     },
@@ -62,8 +119,21 @@
       "description": "Create a retention action for at-risk customer",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "action_type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id",
+          "action_type"
+        ]
       }
     },
     {
@@ -71,7 +141,14 @@
       "description": "Get retention actions for a customer",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
         "required": []
       }
     },
@@ -80,8 +157,18 @@
       "description": "Update status of retention action",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "status"
+        ]
       }
     },
     {
@@ -89,7 +176,11 @@
       "description": "Get overall churn analytics",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "period": {
+            "type": "string"
+          }
+        },
         "required": []
       }
     },
@@ -98,7 +189,11 @@
       "description": "Get cohort retention analysis",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "cohort_month": {
+            "type": "string"
+          }
+        },
         "required": []
       }
     },
@@ -107,8 +202,17 @@
       "description": "Simulate impact of retention action",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "action_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
       }
     },
     {
@@ -116,8 +220,17 @@
       "description": "Get risk score trends over time",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
       }
     }
   ]
