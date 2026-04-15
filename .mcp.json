@@ -1,6 +1,124 @@
 {
   "name": "churn-predictor-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
   "version": "1.0.0",
-  "tools": []
+  "tools": [
+    {
+      "name": "predict_churn",
+      "description": "Predict churn risk for a customer",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "batch_predict_churn",
+      "description": "Predict churn for multiple customers",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_customer_risk",
+      "description": "Get current risk score for a customer",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "track_customer",
+      "description": "Add customer to churn tracking",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "update_customer_signals",
+      "description": "Update customer behavioral signals",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_at_risk_customers",
+      "description": "Get all customers above risk threshold",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create_retention_action",
+      "description": "Create a retention action for at-risk customer",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_retention_actions",
+      "description": "Get retention actions for a customer",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "update_retention_action",
+      "description": "Update status of retention action",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_churn_analytics",
+      "description": "Get overall churn analytics",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_cohort_retention",
+      "description": "Get cohort retention analysis",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "simulate_intervention",
+      "description": "Simulate impact of retention action",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_risk_trends",
+      "description": "Get risk score trends over time",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ]
 }
