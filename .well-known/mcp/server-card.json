@@ -1,0 +1,90 @@
+{
+  "name": "churn-predictor-ai",
+  "description": "Comprehensive customer churn prediction and retention analytics.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/churn-predictor-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "predict_churn",
+      "description": "Predict churn risk for a customer"
+    },
+    {
+      "name": "batch_predict_churn",
+      "description": "Predict churn for multiple customers"
+    },
+    {
+      "name": "get_customer_risk",
+      "description": "Get current risk score for a customer"
+    },
+    {
+      "name": "track_customer",
+      "description": "Add customer to churn tracking"
+    },
+    {
+      "name": "update_customer_signals",
+      "description": "Update customer behavioral signals"
+    },
+    {
+      "name": "get_at_risk_customers",
+      "description": "Get all customers above risk threshold"
+    },
+    {
+      "name": "create_retention_action",
+      "description": "Create a retention action for at-risk customer"
+    },
+    {
+      "name": "get_retention_actions",
+      "description": "Get retention actions for a customer"
+    },
+    {
+      "name": "update_retention_action",
+      "description": "Update status of retention action"
+    },
+    {
+      "name": "get_churn_analytics",
+      "description": "Get overall churn analytics"
+    },
+    {
+      "name": "get_cohort_retention",
+      "description": "Get cohort retention analysis"
+    },
+    {
+      "name": "simulate_intervention",
+      "description": "Simulate impact of retention action"
+    },
+    {
+      "name": "get_risk_trends",
+      "description": "Get risk score trends over time"
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Data & Analytics",
+    "Marketing & SEO"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
