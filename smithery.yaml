@@ -1,5 +1,6 @@
 name: churn-predictor-ai-mcp
-description: Comprehensive customer churn prediction and retention analytics.
+description: MCP server for churn predictor ai. Features predict churn, batch predict
+  churn, get customer risk. From MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: predict_churn
