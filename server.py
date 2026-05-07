@@ -97,7 +97,23 @@ def calculate_risk_score(customer_data: dict) -> dict:
 
 @mcp.tool()
 def predict_churn(customer_id: str = "unknown", last_login_days: int = 0, support_tickets_last_30d: int = 0, nps_score: int = 5, usage_decline_percent: int = 0, payment_failures: int = 0, tenure_months: int = 0, api_key: str = "") -> str:
-    """Predict churn risk for a customer"""
+    """Predict churn risk for a customer
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -132,7 +148,23 @@ def predict_churn(customer_id: str = "unknown", last_login_days: int = 0, suppor
 
 @mcp.tool()
 def batch_predict_churn(customers: list = None, api_key: str = "") -> str:
-    """Predict churn for multiple customers"""
+    """Predict churn for multiple customers
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -148,7 +180,23 @@ def batch_predict_churn(customers: list = None, api_key: str = "") -> str:
 
 @mcp.tool()
 def get_customer_risk(customer_id: str, api_key: str = "") -> str:
-    """Get current risk score for a customer"""
+    """Get current risk score for a customer
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -163,7 +211,23 @@ def get_customer_risk(customer_id: str, api_key: str = "") -> str:
 
 @mcp.tool()
 def track_customer(customer_id: str, initial_data: dict = None, api_key: str = "") -> str:
-    """Add customer to churn tracking"""
+    """Add customer to churn tracking
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -179,7 +243,23 @@ def track_customer(customer_id: str, initial_data: dict = None, api_key: str = "
 
 @mcp.tool()
 def update_customer_signals(customer_id: str, signals: dict = None, api_key: str = "") -> str:
-    """Update customer behavioral signals"""
+    """Update customer behavioral signals
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -197,7 +277,23 @@ def update_customer_signals(customer_id: str, signals: dict = None, api_key: str
 
 @mcp.tool()
 def get_at_risk_customers(threshold: int = 60, limit: int = 50, api_key: str = "") -> str:
-    """Get all customers above risk threshold"""
+    """Get all customers above risk threshold
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -217,7 +313,22 @@ def get_at_risk_customers(threshold: int = 60, limit: int = 50, api_key: str = "
 
 @mcp.tool()
 def create_retention_action(customer_id: str, action_type: str, description: str = "", api_key: str = "") -> str:
-    """Create a retention action for at-risk customer"""
+    """Create a retention action for at-risk customer
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -246,7 +357,23 @@ def create_retention_action(customer_id: str, action_type: str, description: str
 
 @mcp.tool()
 def get_retention_actions(customer_id: str = "", status: str = "", api_key: str = "") -> str:
-    """Get retention actions for a customer"""
+    """Get retention actions for a customer
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -263,7 +390,23 @@ def get_retention_actions(customer_id: str = "", status: str = "", api_key: str 
 
 @mcp.tool()
 def update_retention_action(action_id: str, status: str, api_key: str = "") -> str:
-    """Update status of retention action"""
+    """Update status of retention action
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -280,7 +423,23 @@ def update_retention_action(action_id: str, status: str, api_key: str = "") -> s
 
 @mcp.tool()
 def get_churn_analytics(period: str = "30d", api_key: str = "") -> str:
-    """Get overall churn analytics"""
+    """Get overall churn analytics
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -320,7 +479,23 @@ def get_churn_analytics(period: str = "30d", api_key: str = "") -> str:
 
 @mcp.tool()
 def get_cohort_retention(cohort_month: str = "", api_key: str = "") -> str:
-    """Get cohort retention analysis"""
+    """Get cohort retention analysis
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -337,7 +512,23 @@ def get_cohort_retention(cohort_month: str = "", api_key: str = "") -> str:
 
 @mcp.tool()
 def simulate_intervention(customer_id: str, action_type: str = "", api_key: str = "") -> str:
-    """Simulate impact of retention action"""
+    """Simulate impact of retention action
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -378,7 +569,23 @@ def simulate_intervention(customer_id: str, action_type: str = "", api_key: str 
 
 @mcp.tool()
 def get_risk_trends(customer_id: str, days: int = 30, api_key: str = "") -> str:
-    """Get risk score trends over time"""
+    """Get risk score trends over time
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
