@@ -113,6 +113,17 @@ def predict_churn(customer_id: str = "unknown", last_login_days: int = 0, suppor
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        last_login_days (int): The last login days to analyze or process.
+        support_tickets_last_30d (int): The support tickets last 30d to analyze or process.
+        nps_score (int): The nps score to analyze or process.
+        usage_decline_percent (int): The usage decline percent to analyze or process.
+        payment_failures (int): The payment failures to analyze or process.
+        tenure_months (int): The tenure months to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -178,6 +189,11 @@ def batch_predict_churn(customers: list = None, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customers (list): The customers to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -224,6 +240,11 @@ def get_customer_risk(customer_id: str, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -269,6 +290,12 @@ def track_customer(customer_id: str, initial_data: dict = None, api_key: str = "
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        initial_data (dict): The initial data to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -315,6 +342,12 @@ def update_customer_signals(customer_id: str, signals: dict = None, api_key: str
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        signals (dict): The signals to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -363,6 +396,12 @@ def get_at_risk_customers(threshold: int = 60, limit: int = 50, api_key: str = "
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        threshold (int): The threshold to analyze or process.
+        limit (int): The limit to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -412,6 +451,13 @@ def create_retention_action(customer_id: str, action_type: str, description: str
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        action_type (str): The action type to analyze or process.
+        description (str): The description to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -471,6 +517,12 @@ def get_retention_actions(customer_id: str = "", status: str = "", api_key: str 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        status (str): The status to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -518,6 +570,12 @@ def update_retention_action(action_id: str, status: str, api_key: str = "") -> s
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        action_id (str): The action id to analyze or process.
+        status (str): The status to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -565,6 +623,11 @@ def get_churn_analytics(period: str = "30d", api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        period (str): The period to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -635,6 +698,11 @@ def get_cohort_retention(cohort_month: str = "", api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        cohort_month (str): The cohort month to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -682,6 +750,12 @@ def simulate_intervention(customer_id: str, action_type: str = "", api_key: str 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        action_type (str): The action type to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -753,6 +827,12 @@ def get_risk_trends(customer_id: str, days: int = 30, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        customer_id (str): The customer id to analyze or process.
+        days (int): The days to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
