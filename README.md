@@ -1,45 +1,67 @@
-[![churn-predictor-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/churn-predictor-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/churn-predictor-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/churn-predictor-ai-mcp)](https://pypi.org/project/churn-predictor-ai-mcp/)
-
-[![churn-predictor-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/churn-predictor-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/churn-predictor-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/churn-predictor-ai-mcp)](https://github.com/CSOAI-ORG/churn-predictor-ai-mcp/stargazers)
+# Churn Predictor Ai MCP
 
-# uchurnU predictorU aiU mcp
+**MCP server for churn predictor ai mcp operations**
 
-****
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/churn-predictor-ai-mcp)](https://www.npmjs.com/package/@meok-ai/churn-predictor-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-churn-predictor-ai-mcp)](https://pypi.org/project/meok-churn-predictor-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/churn-predictor-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Churn Predictor Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `predict_churn` | Predict churn risk for a customer |
+| `batch_predict_churn` | Predict churn for multiple customers |
+| `get_customer_risk` | Get current risk score for a customer |
+| `track_customer` | Add customer to churn tracking |
+| `update_customer_signals` | Update customer behavioral signals |
+| `get_at_risk_customers` | Get all customers above risk threshold |
+| `create_retention_action` | Create a retention action for at-risk customer |
+| `get_retention_actions` | Get retention actions for a customer |
+| `update_retention_action` | Update status of retention action |
+| `get_churn_analytics` | Get overall churn analytics |
+| `get_cohort_retention` | Get cohort retention analysis |
+| `simulate_intervention` | Simulate impact of retention action |
+| `get_risk_trends` | Get risk score trends over time |
 
 ## Installation
 
 ```bash
-pip install churn-predictor-ai-mcp
-# or
-npm install -g @meok-ai/churn-predictor-ai-mcp
+pip install meok-churn-predictor-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "churn-predictor-ai": {
+      "command": "python",
+      "args": ["-m", "meok_churn_predictor_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 13 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/churn-predictor-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
