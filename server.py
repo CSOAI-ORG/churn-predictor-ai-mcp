@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""MEOK AI Labs — churn-predictor-ai-mcp MCP Server. Comprehensive customer churn prediction and retention analytics."""
+"""
+Buy Pro: https://www.csoai.org/checkout
+MEOK AI Labs — churn-predictor-ai-mcp MCP Server. Comprehensive customer churn prediction and retention analytics."""
 
 import json
 from datetime import datetime, timedelta, timezone
@@ -8,7 +10,6 @@ import uuid
 from collections import defaultdict
 import sys, os
 
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 from mcp.server.fastmcp import FastMCP
 
@@ -141,7 +142,7 @@ def predict_churn(customer_id: str = "unknown", last_login_days: int = 0, suppor
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     customer_data = {
@@ -211,7 +212,7 @@ def batch_predict_churn(customers: list = None, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     results = []
@@ -262,7 +263,7 @@ def get_customer_risk(customer_id: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if customer_id in _store["customers"]:
@@ -313,7 +314,7 @@ def track_customer(customer_id: str, initial_data: dict = None, api_key: str = "
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     _store["customers"][customer_id] = {
@@ -365,7 +366,7 @@ def update_customer_signals(customer_id: str, signals: dict = None, api_key: str
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if customer_id not in _store["customers"]:
@@ -419,7 +420,7 @@ def get_at_risk_customers(threshold: int = 60, limit: int = 50, api_key: str = "
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     at_risk = []
@@ -475,7 +476,7 @@ def create_retention_action(customer_id: str, action_type: str, description: str
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     action = {
@@ -540,7 +541,7 @@ def get_retention_actions(customer_id: str = "", status: str = "", api_key: str 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     actions = _store["retention_actions"]
@@ -593,7 +594,7 @@ def update_retention_action(action_id: str, status: str, api_key: str = "") -> s
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     for action in _store["retention_actions"]:
@@ -645,7 +646,7 @@ def get_churn_analytics(period: str = "30d", api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     predictions = _store["predictions"]
@@ -720,7 +721,7 @@ def get_cohort_retention(cohort_month: str = "", api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     return json.dumps(
@@ -773,7 +774,7 @@ def simulate_intervention(customer_id: str, action_type: str = "", api_key: str 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if customer_id not in _store["customers"]:
@@ -850,7 +851,7 @@ def get_risk_trends(customer_id: str, days: int = 30, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     predictions = [
@@ -879,5 +880,8 @@ def get_risk_trends(customer_id: str, days: int = 30, api_key: str = "") -> str:
     )
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
