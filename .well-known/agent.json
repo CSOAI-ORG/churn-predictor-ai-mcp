@@ -1,0 +1,140 @@
+{
+  "name": "churn-predictor-ai-mcp",
+  "description": "Churn Predictor Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/churn-predictor-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "predict_churn",
+      "name": "Predict Churn",
+      "description": "predict_churn via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "batch_predict_churn",
+      "name": "Batch Predict Churn",
+      "description": "batch_predict_churn via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_customer_risk",
+      "name": "Get Customer Risk",
+      "description": "get_customer_risk via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "track_customer",
+      "name": "Track Customer",
+      "description": "track_customer via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "update_customer_signals",
+      "name": "Update Customer Signals",
+      "description": "update_customer_signals via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_at_risk_customers",
+      "name": "Get At Risk Customers",
+      "description": "get_at_risk_customers via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_retention_action",
+      "name": "Create Retention Action",
+      "description": "create_retention_action via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_retention_actions",
+      "name": "Get Retention Actions",
+      "description": "get_retention_actions via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "update_retention_action",
+      "name": "Update Retention Action",
+      "description": "update_retention_action via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_churn_analytics",
+      "name": "Get Churn Analytics",
+      "description": "get_churn_analytics via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_cohort_retention",
+      "name": "Get Cohort Retention",
+      "description": "get_cohort_retention via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "simulate_intervention",
+      "name": "Simulate Intervention",
+      "description": "simulate_intervention via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_risk_trends",
+      "name": "Get Risk Trends",
+      "description": "get_risk_trends via churn-predictor-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

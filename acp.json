@@ -1,0 +1,31 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "churn-predictor-ai-mcp",
+    "description": "Churn Predictor Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "churn-predictor-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "predict_churn",
+      "batch_predict_churn",
+      "get_customer_risk",
+      "track_customer",
+      "update_customer_signals",
+      "get_at_risk_customers",
+      "create_retention_action",
+      "get_retention_actions",
+      "update_retention_action",
+      "get_churn_analytics",
+      "get_cohort_retention",
+      "simulate_intervention",
+      "get_risk_trends"
+    ]
+  }
+}
