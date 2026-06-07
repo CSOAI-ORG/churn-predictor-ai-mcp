@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-Buy Pro: https://www.csoai.org/checkout
 MEOK AI Labs — churn-predictor-ai-mcp MCP Server. Comprehensive customer churn prediction and retention analytics."""
 
 import json

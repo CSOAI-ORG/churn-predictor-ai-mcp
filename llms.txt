@@ -1,40 +1,60 @@
-# Churn Predictor Ai MCP
-
-> Comprehensive customer churn prediction and retention analytics
-
-`churn-predictor-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+# churn-predictor-ai-mcp
+# **MCP server for churn predictor ai mcp operations**
 
 ## Install
-
 ```bash
 pip install churn-predictor-ai-mcp
 ```
 
-Or run without installing:
-
-```bash
-uvx churn-predictor-ai-mcp
-```
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
 
 ## Tools
 
-- `predict_churn` — Predict churn risk for a customer
-- `batch_predict_churn` — Predict churn for multiple customers
-- `get_customer_risk` — Get current risk score for a customer
-- `track_customer` — Add customer to churn tracking
-- `update_customer_signals` — Update customer behavioral signals
-- `get_at_risk_customers` — Get all customers above risk threshold
-- `create_retention_action` — Create a retention action for at-risk customer
-- `get_retention_actions` — Get retention actions for a customer
-- `update_retention_action` — Update status of retention action
-- `get_churn_analytics` — Get overall churn analytics
-- `get_cohort_retention` — Get cohort retention analysis
-- `simulate_intervention` — Simulate impact of retention action
-- `get_risk_trends` — Get risk score trends over time
+### `predict_churn`
+Predict churn risk for a customer
 
-## Links
+### `batch_predict_churn`
+Predict churn for multiple customers
 
-- Source: https://github.com/CSOAI-ORG/churn-predictor-ai-mcp
-- PyPI: https://pypi.org/project/churn-predictor-ai-mcp/
-- MEOK AI Labs: https://meok.ai
-- Council of AI: https://councilof.ai
+### `get_customer_risk`
+Get current risk score for a customer
+
+### `track_customer`
+Add customer to churn tracking
+
+### `update_customer_signals`
+Update customer behavioral signals
+
+### `get_at_risk_customers`
+Get all customers above risk threshold
+
+### `create_retention_action`
+Create a retention action for at-risk customer
+
+### `get_retention_actions`
+Get retention actions for a customer
+
+### `update_retention_action`
+Update status of retention action
+
+### `get_churn_analytics`
+Get overall churn analytics
+
+### `get_cohort_retention`
+Get cohort retention analysis
+
+### `simulate_intervention`
+Simulate impact of retention action
+
+### `get_risk_trends`
+Get risk score trends over time
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

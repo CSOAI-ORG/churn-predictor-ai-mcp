@@ -1,0 +1,52 @@
+{
+  "name": "churn-predictor-ai-mcp",
+  "title": "Churn Predictor Ai Mcp",
+  "description": "MCP server for churn predictor ai. Features predict churn, batch predict churn, get customer risk. From MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "predict_churn"
+    },
+    {
+      "name": "batch_predict_churn"
+    },
+    {
+      "name": "get_customer_risk"
+    },
+    {
+      "name": "track_customer"
+    },
+    {
+      "name": "update_customer_signals"
+    },
+    {
+      "name": "get_at_risk_customers"
+    },
+    {
+      "name": "create_retention_action"
+    },
+    {
+      "name": "get_retention_actions"
+    },
+    {
+      "name": "update_retention_action"
+    },
+    {
+      "name": "get_churn_analytics"
+    },
+    {
+      "name": "get_cohort_retention"
+    },
+    {
+      "name": "simulate_intervention"
+    },
+    {
+      "name": "get_risk_trends"
+    }
+  ]
+}

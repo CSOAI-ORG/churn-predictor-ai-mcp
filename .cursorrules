@@ -1,0 +1,9 @@
+# churn-predictor-ai-mcp - Auto-trigger Rules
+
+When the user asks about churn predictor, use churn-predictor-ai-mcp tools: predict_churn, batch_predict_churn, get_customer_risk, track_customer, update_customer_signals
+
+**MCP server for churn predictor ai mcp operations**
+
+Install: `pip install churn-predictor-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
