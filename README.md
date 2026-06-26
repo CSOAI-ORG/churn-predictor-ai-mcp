@@ -98,3 +98,28 @@ buyers can deploy without vendor-lock-in objections.
 
 <!-- BUY-LADDER:END -->
 
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "churn-predictor-ai-mcp": {
+      "command": "uvx",
+      "args": ["churn-predictor-ai-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install churn-predictor-ai-mcp` then run the `churn-predictor-ai-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `predict_churn` to …"
+- "Use `batch_predict_churn` to …"
+- "Use `get_customer_risk` to …"
